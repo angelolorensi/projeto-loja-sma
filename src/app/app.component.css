@@ -1,10 +1,11 @@
 
 .toolbar{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: #ffffff;
+  background-color: #eaeaea;
+  gap: 10vh;
 }
 
 .toolbar-botao{
@@ -15,3 +16,14 @@
   margin-right: 7px;
 }
 
+.barra-de-pesquisa{
+  width: 50%;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .toolbar{
+    justify-content: center;
+    gap: 1vh;
+  }
+}

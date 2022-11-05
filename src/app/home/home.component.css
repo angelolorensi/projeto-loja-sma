@@ -29,6 +29,79 @@
   font-size: 30px;
 }
 
+.opcoes-mat-menu{
+  width: 21vh;
+  text-align: center;
+}
+
+
+.logo-escrito{
+  width: 45vh;
+  margin: 1vh;
+  margin-left: 10vh;
+}
+
+.conteudo-primeiro{
+  display: flex;
+  gap: 10vh;
+  margin-top: 2vh;
+  border-bottom: 1px solid;
+}
+
+.conteudo-primeiro-titulo{
+  font-weight: bold;
+}
+
+.conteudo-primeiro-subtitulo{
+  color: rgb(88, 88, 88);
+}
+
+.conteudo-segundo-titulo{
+  margin-top: 40px;
+  font-size: 3vh;
+  text-decoration: underline;
+}
+
+.conteudo-segundo-cards{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.mat-card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-img{
+  border-bottom: 1px solid;
+}
+
+.preco-produto{
+  font-size: 2.5vh;
+}
+
+.footer{
+  border-top: 1px solid ;
+  margin-top: 40px;
+}
+
+.footer-titulo{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: #909090;
+}
+
+.footer-icones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 30px;
+}
+
 @media (max-width: 500px) {
   .toolbar{
     justify-content: center;
@@ -36,8 +109,24 @@
   }
 
   .toolbar-itens{
-    font-size: 10px;
+    font-size: 15px;
+    padding: 1px;
   }
 
-  
+  .logo-escrito{
+    display: none;
+  }
+
+  .conteudo-primeiro{
+  display: flex;
+  gap: 1vh;
+  margin: 2px;
+  margin-top: 2vh;
+  }
+
+  .conteudo-segundo-cards{
+    display: flex;
+    flex-direction: column;
+  }
 }
+
