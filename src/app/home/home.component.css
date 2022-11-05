@@ -1,0 +1,43 @@
+.background-image{
+  background-image: url('src\assets\img\background-home.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 140vh;
+  height: 40vh;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.toolbar{
+  background-color: transparent;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid;
+}
+
+.toolbar-itens{
+  color: white;
+  background-color: transparent;
+  font-size: 30px;
+}
+
+@media (max-width: 500px) {
+  .toolbar{
+    justify-content: center;
+    gap: 1vh;
+  }
+
+  .toolbar-itens{
+    font-size: 10px;
+  }
+
+  
+}

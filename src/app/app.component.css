@@ -1,0 +1,17 @@
+
+.toolbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  background-color: #ffffff;
+}
+
+.toolbar-botao{
+  background-color: transparent;
+}
+
+.toolbar-icons{
+  margin-right: 7px;
+}
+
