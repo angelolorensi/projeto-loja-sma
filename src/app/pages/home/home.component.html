@@ -1,10 +1,10 @@
 <div class="container">
   <div class="background-image">
     <mat-toolbar class="toolbar">
-       <button [matMenuTriggerFor]="opcoesRoupas" class="toolbar-itens" mat-raised-button>CAMISETAS</button>
-       <button [matMenuTriggerFor]="opcoesRoupas" class="toolbar-itens" mat-raised-button>BERMUDAS</button>
-       <button [matMenuTriggerFor]="opcoesRoupas" class="toolbar-itens" mat-raised-button>MOLETONS</button>
-       <button [matMenuTriggerFor]="opcoesAcessorios" class="toolbar-itens" mat-raised-button>ACESSÓRIOS</button>
+       <button routerLink="camisetas" class="toolbar-itens" mat-raised-button>CAMISETAS</button>
+       <button routerLink="bermudas" class="toolbar-itens" mat-raised-button>BERMUDAS</button>
+       <button routerLink="moletons" class="toolbar-itens" mat-raised-button>MOLETONS</button>
+       <button routerLink="acessorios" class="toolbar-itens" mat-raised-button>ACESSÓRIOS</button>
     </mat-toolbar>
 
     <img class="logo-escrito" src="\assets\img\logo-escrito.svg">
@@ -80,19 +80,4 @@
     <a href="https://www.linkedin.com/in/angelo-lorensi-52745a20b/"><img src="/assets/img/footer-icones/logo_linkedin.svg"></a>
   </div>
 </footer>
-
-<mat-menu #opcoesRoupas="matMenu">
-  <button class="opcoes-mat-menu" mat-menu-item="PP">PP</button>
-  <button class="opcoes-mat-menu" mat-menu-item="P">P</button>
-  <button class="opcoes-mat-menu" mat-menu-item="M">M</button>
-  <button class="opcoes-mat-menu" mat-menu-item="G">G</button>
-  <button class="opcoes-mat-menu" mat-menu-item="XG">XG</button>
-  <button class="opcoes-mat-menu" mat-menu-item="XGG">XGG</button>
-</mat-menu>
-
-<mat-menu #opcoesAcessorios="matMenu">
-  <button class="opcoes-mat-menu" mat-menu-item="Relogios">Relógios</button>
-  <button class="opcoes-mat-menu" mat-menu-item="Correntes">Correntes</button>
-  <button class="opcoes-mat-menu" mat-menu-item="Bonés">Bonés</button>
-</mat-menu>
 
