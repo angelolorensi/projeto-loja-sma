@@ -157,3 +157,9 @@ mat-sidenav-content {
     height: 100%;
   }
 }
+
+@media (max-width: 425px) {
+  .conteudo-produtos{
+    margin-left: 25px;
+  }
+}

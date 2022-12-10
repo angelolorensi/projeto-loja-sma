@@ -1,1 +1,44 @@
-<p>camisetas works!</p>
+<div class="container">
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav">
+      <div class="titulo-sidenav">FILTROS</div>
+
+      <div class="opcoes-sidenav">PREÇO</div>
+      <div class="opcoes-sidenav">TAMANHO</div>
+      <div class="opcoes-sidenav">COR</div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="conteudo">
+        <button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()" mat-raised-button class="botao-filtro"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="filter_alt"></mat-icon></button>
+        <div class="conteudo-banner">
+          <h1 class="conteudo-banner-texto">CAMISETAS</h1>
+        </div>
+      </div>
+
+      <div class="conteudo-produtos">
+        <mat-card class="mat-card-produto">
+          <img class="card-img"src="\assets\img\camisetas\camiseta-insert-coins.svg"/>
+          <mat-card-content class="mat-card-content">
+            <h2 class="nome-produto">Camiseta "nome da camiseta"</h2>
+            <p class="preco-produto">R$ 50,00</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<footer class="footer">
+  <div class="footer-titulo">
+    <p class="footer-titulo-texto">
+      Site projeto feito por Angelo Lorensi Mozzaquatro.
+    </p>
+  </div>
+
+  <div class= "footer-icones">
+    <a href="https://github.com/angelolorensi"><img src="/assets/img/footer-icones/logo_github.svg"></a>
+    <a href="https://www.instagram.com/angelo_lorensi/" class="mx-sm-3"><img src="assets/img/footer-icones/logo_instagram.svg"></a>
+    <a href="https://www.linkedin.com/in/angelo-lorensi-52745a20b/"><img src="/assets/img/footer-icones/logo_linkedin.svg"></a>
+  </div>
+</footer>
+
