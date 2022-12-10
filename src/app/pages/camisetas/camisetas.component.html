@@ -15,15 +15,19 @@
         </div>
       </div>
 
-      <div class="conteudo-produtos">
-        <mat-card class="mat-card-produto">
-          <img class="card-img"src="\assets\img\camisetas\camiseta-insert-coins.svg"/>
-          <mat-card-content class="mat-card-content">
-            <h2 class="nome-produto">Camiseta "nome da camiseta"</h2>
-            <p class="preco-produto">R$ 50,00</p>
-          </mat-card-content>
-        </mat-card>
-      </div>
+      <ul>
+        <li *ngFor="let camiseta of camisetas">
+          <div class="conteudo-produtos">
+            <mat-card class="mat-card-produto" >
+              <img class="card-img"src="{{camiseta.urlImagem}}"/>
+              <mat-card-content class="mat-card-content">
+                <h2 class="nome-produto">Camiseta {{camiseta.nome}}</h2>
+                <p class="preco-produto">{{camiseta.preco | currency:'R$'}}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </li>
+      </ul>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

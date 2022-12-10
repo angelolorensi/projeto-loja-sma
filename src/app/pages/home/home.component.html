@@ -36,35 +36,21 @@
     </div>
   </div>
 
-  <h2 class="conteudo-segundo-titulo">Mais Vendidos:</h2>
+  <h2 class="mais-vendidos">Mais Vendidos:</h2>
 
-  <div class="conteudo-segundo-cards">
-
-    <mat-card>
-      <img class="card-img" src="\assets\img\camisetas\camiseta-insert-coins.svg">
-       <mat-card-content class="mat-card-content">
-        <h2 class="nome-produto">Camiseta "nome da camiseta"</h2>
-        <p class="preco-produto">R$ 50,00</p>
-      </mat-card-content>
-    </mat-card>
-
-   <mat-card>
-      <img class="card-img" src="\assets\img\camisetas\camiseta-do-more.svg">
-      <mat-card-content class="mat-card-content">
-        <h2 class="nome-produto">Camiseta "nome da camiseta"</h2>
-        <p class="preco-produto">R$ 50,00</p>
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card>
-      <img class="card-img" src="\assets\img\camisetas\camiseta-in-god-we-trust.svg">
-       <mat-card-content class="mat-card-content">
-        <h2 class="nome-produto">Camiseta "nome da camiseta"</h2>
-        <p class="preco-produto">R$ 50,00</p>
-      </mat-card-content>
-    </mat-card>
-
-  </div>
+  <ul>
+    <li *ngFor="let camiseta of camisetas">
+      <div class="conteudo-produtos">
+        <mat-card class="mat-card-produto" >
+          <img class="card-img"src="{{camiseta.urlImagem}}"/>
+          <mat-card-content class="mat-card-content">
+            <h2 class="nome-produto">Camiseta {{camiseta.nome}}</h2>
+            <p class="preco-produto">{{camiseta.preco | currency:'R$'}}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </li>
+  </ul>
 </div>
 
 <footer class="footer">

@@ -1,4 +1,6 @@
+import { CamisetasService } from './../../service/camisetas/camisetas.service';
 import { Component, OnInit } from '@angular/core';
+import { Camiseta } from 'src/app/shared/model/Camiseta';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  camisetas: Camiseta[] = [];
+
+  constructor(private camisetaService:CamisetasService) { }
 
   ngOnInit(): void {
+    this.camisetas = this.camisetaService.buscarMaisVendidos();
   }
 
 }

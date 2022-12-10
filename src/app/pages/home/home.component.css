@@ -56,15 +56,17 @@
   color: rgb(88, 88, 88);
 }
 
-.conteudo-segundo-titulo{
+.mais-vendidos{
   margin-top: 40px;
   font-size: 3vh;
   text-decoration: underline;
 }
 
-.conteudo-segundo-cards{
+ul{
   display: flex;
-  flex-direction: row;
+  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
