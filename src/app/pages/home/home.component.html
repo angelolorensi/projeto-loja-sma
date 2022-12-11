@@ -1,7 +1,7 @@
 <div class="container">
   <div class="background-image">
     <mat-toolbar class="toolbar">
-       <button routerLink="camisetas" class="toolbar-itens" mat-raised-button>CAMISETAS</button>
+       <button routerLink="lista-produtos" class="toolbar-itens" mat-raised-button>CAMISETAS</button>
        <button routerLink="bermudas" class="toolbar-itens" mat-raised-button>BERMUDAS</button>
        <button routerLink="moletons" class="toolbar-itens" mat-raised-button>MOLETONS</button>
        <button routerLink="acessorios" class="toolbar-itens" mat-raised-button>ACESSÓRIOS</button>
@@ -40,15 +40,17 @@
 
   <ul>
     <li *ngFor="let camiseta of camisetas">
-      <div class="conteudo-produtos">
-        <mat-card class="mat-card-produto" >
-          <img class="card-img"src="{{camiseta.urlImagem}}"/>
-          <mat-card-content class="mat-card-content">
-            <h2 class="nome-produto">Camiseta {{camiseta.nome}}</h2>
-            <p class="preco-produto">{{camiseta.preco | currency:'R$'}}</p>
-          </mat-card-content>
-        </mat-card>
-      </div>
+      <a routerLink="/pagina-produto/{{camiseta.id}}">
+        <div class="conteudo-produtos">
+          <mat-card class="mat-card-produto" >
+            <img class="card-img"src="{{camiseta.urlImagem}}"/>
+            <mat-card-content class="mat-card-content">
+              <h2 class="nome-produto">Camiseta {{camiseta.nome}}</h2>
+              <p class="preco-produto">{{camiseta.preco | currency:'R$'}}</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </a>
     </li>
   </ul>
 </div>

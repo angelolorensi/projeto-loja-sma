@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Camiseta } from 'src/app/shared/model/Camiseta';
+import { Camiseta } from 'src/app/model/Camiseta';
 
 @Injectable({
   providedIn: 'root',
@@ -13,44 +13,58 @@ export class CamisetasService {
         id: 1,
         nome: 'Insert Coins',
         tamanho: 'G',
+        cor: 'Preta',
         preco: 50,
         descricao:
           'Camiseta Insert Coins fabricada 100% em algodao, cor preta , com o logo em caixa alta.',
         favorito: false,
         urlImagem: '/assets/img/camisetas/camiseta-insert-coins.svg',
+        urlImagemZoom:
+          '/assets/img/camisetas/camiseta-insert-coins-close-up.png',
+        urlImagemBack: '/assets/img/camisetas/camiseta-back-preta.svg',
         filtros: ['G', 'preto'],
       },
       {
-        id: 1,
-        nome: 'Insert Coins',
+        id: 2,
+        nome: 'Code Red',
         tamanho: 'G',
+        cor: 'Preta',
         preco: 50,
         descricao:
           'Camiseta Insert Coins fabricada 100% em algodao, cor preta , com o logo em caixa alta.',
         favorito: false,
-        urlImagem: '/assets/img/camisetas/camiseta-insert-coins.svg',
+        urlImagem: '/assets/img/camisetas/camiseta-code-red.svg',
+        urlImagemZoom: '/assets/img/camisetas/camiseta-code-red-close-up.png',
+        urlImagemBack: '/assets/img/camisetas/camiseta-back-preta.svg',
         filtros: ['G', 'preto'],
       },
       {
-        id: 1,
-        nome: 'Insert Coins',
+        id: 3,
+        nome: 'Do More',
         tamanho: 'G',
+        cor: 'Preta',
         preco: 50,
         descricao:
           'Camiseta Insert Coins fabricada 100% em algodao, cor preta , com o logo em caixa alta.',
         favorito: false,
-        urlImagem: '/assets/img/camisetas/camiseta-insert-coins.svg',
+        urlImagem: '/assets/img/camisetas/camiseta-do-more.svg',
+        urlImagemZoom: '/assets/img/camisetas/camiseta-do-more-close-up.png',
+        urlImagemBack: '/assets/img/camisetas/camiseta-back-preta.svg',
         filtros: ['G', 'preto'],
       },
       {
-        id: 1,
+        id: 4,
         nome: 'Insert Coins',
         tamanho: 'G',
+        cor: 'Preta',
         preco: 50,
         descricao:
           'Camiseta Insert Coins fabricada 100% em algodao, cor preta , com o logo em caixa alta.',
         favorito: false,
         urlImagem: '/assets/img/camisetas/camiseta-insert-coins.svg',
+        urlImagemZoom:
+          '/assets/img/camisetas/camiseta-insert-coins-close-up.png',
+        urlImagemBack: '/assets/img/camisetas/camiseta-back-preta.svg',
         filtros: ['G', 'preto'],
       },
     ];
@@ -92,5 +106,9 @@ export class CamisetasService {
         filtros: ['G', 'preto'],
       },
     ];
+  }
+
+  buscarCamisetaPorId(id: number): Camiseta {
+    return this.buscarTodos().find((camiseta) => camiseta.id == id)!;
   }
 }

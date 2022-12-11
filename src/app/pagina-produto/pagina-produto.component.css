@@ -1,0 +1,91 @@
+.container{
+  background-image: url('/assets/img/background-pagina-produto.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1600px;
+}
+
+.conteudo-imagens {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  padding: 2vh;
+}
+
+.imagem-front{
+  width:auto;
+  height: 500px;
+}
+
+.imagem{
+  width: auto;
+  height: 245px;
+  border-radius: 15px;
+}
+
+.div-front-back{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.conteudo-texto{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.titulo{
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.botoes-tamanho{
+  margin-left: 20px;
+  width: 70px;
+  height: 50px;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.preco{
+  font-size: 50px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.botao-comprar{
+  color: white;
+  background-color: black;
+  width: 200px;
+  height: 50px;
+  border-radius: 100px;
+  font-size: 30px;
+  opacity: .8;
+}
+
+.botao-comprar:hover{
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .imagem{
+    display: none;
+  }
+
+}
+
+@media (max-width: 450px) {
+  .imagem-front{
+    height: 400px;
+  }
+
+  .titulo{
+    font-size: 30px;
+  }
+}

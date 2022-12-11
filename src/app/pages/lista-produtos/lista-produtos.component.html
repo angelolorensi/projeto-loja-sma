@@ -11,19 +11,25 @@
       <div class="conteudo">
         <button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()" mat-raised-button class="botao-filtro"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="filter_alt"></mat-icon></button>
         <div class="conteudo-banner">
-          <h1 class="conteudo-banner-texto">MOLETONS</h1>
+          <h1 class="conteudo-banner-texto">CAMISETAS</h1>
         </div>
       </div>
 
-      <div class="conteudo-produtos">
-        <mat-card class="mat-card-produto">
-          <img class="card-img"src="\assets\img\camisetas\camiseta-insert-coins.svg"/>
-          <mat-card-content class="mat-card-content">
-            <h2 class="nome-produto">Camiseta "nome da camiseta"</h2>
-            <p class="preco-produto">R$ 50,00</p>
-          </mat-card-content>
-        </mat-card>
-      </div>
+      <ul>
+        <li *ngFor="let camiseta of camisetas">
+          <a routerLink="/pagina-produto/{{camiseta.id}}">
+            <div class="conteudo-produtos">
+              <mat-card class="mat-card-produto" >
+                <img class="card-img"src="{{camiseta.urlImagem}}"/>
+                <mat-card-content class="mat-card-content">
+                  <h2 class="nome-produto">Camiseta {{camiseta.nome}}</h2>
+                  <p class="preco-produto">{{camiseta.preco | currency:'R$'}}</p>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </a>
+        </li>
+      </ul>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
@@ -41,4 +47,3 @@
     <a href="https://www.linkedin.com/in/angelo-lorensi-52745a20b/"><img src="/assets/img/footer-icones/logo_linkedin.svg"></a>
   </div>
 </footer>
-

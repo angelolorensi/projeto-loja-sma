@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="conteudo-imagens">
+    <img class="imagem-front" src="{{ camiseta.urlImagem }}" />
+    <div class="div-front-back">
+      <img class="imagem" src="{{ camiseta.urlImagemZoom }}" />
+      <img class="imagem" src="{{ camiseta.urlImagemBack }}" />
+    </div>
+  </div>
+</div>
+<div class="conteudo-texto">
+  <h2 class="titulo">Camiseta {{ camiseta.nome }} {{ camiseta.cor }}</h2>
+  <div>
+    <button class="botoes-tamanho" mat-raised-button>P</button>
+    <button class="botoes-tamanho" mat-raised-button>M</button>
+    <button class="botoes-tamanho" mat-raised-button>G</button>
+    <button class="botoes-tamanho" mat-raised-button>GG</button>
+  </div>
+  <div class="preco">{{camiseta.preco | currency:'R$'}}</div>
+  <button class="botao-comprar" mat-raised-button>COMPRAR</button>
+</div>
