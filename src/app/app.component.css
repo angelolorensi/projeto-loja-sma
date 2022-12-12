@@ -21,6 +21,11 @@
   text-align: center;
 }
 
+mat-icon:hover{
+  cursor: pointer;
+  color: grey
+}
+
 @media (max-width: 500px) {
   .toolbar{
     justify-content: center;

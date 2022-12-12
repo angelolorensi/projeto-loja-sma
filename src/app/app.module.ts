@@ -12,8 +12,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { PaginaProdutoComponent } from './pagina-produto/pagina-produto.component';
 import { ListaProdutosComponent } from './pages/lista-produtos/lista-produtos.component';
+import { PaginaProdutoComponent } from './pages/pagina-produto/pagina-produto.component';
+import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
+import { FavoritosComponent } from './pages/favoritos/favoritos.component';
+import { ContaUsuarioComponent } from './pages/conta-usuario/conta-usuario.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { ListaProdutosComponent } from './pages/lista-produtos/lista-produtos.co
     HomeComponent,
     PaginaProdutoComponent,
     ListaProdutosComponent,
+    CarrinhoComponent,
+    FavoritosComponent,
+    ContaUsuarioComponent,
   ],
   imports: [
     BrowserModule,
