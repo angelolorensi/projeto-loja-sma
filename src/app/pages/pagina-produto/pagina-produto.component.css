@@ -73,6 +73,27 @@
   opacity: 1;
 }
 
+.footer{
+  border-top: 1px solid ;
+  margin-top: 40px;
+}
+
+.footer-titulo{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: #909090;
+}
+
+.footer-icones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 30px;
+}
+
+
 @media (max-width: 900px) {
   .imagem{
     display: none;

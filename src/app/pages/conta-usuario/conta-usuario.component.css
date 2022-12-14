@@ -39,6 +39,7 @@
 }
 
 .tabela-pedido{
+  background-color: rgb(195, 195, 195);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -104,6 +105,27 @@
   font-weight: 500;
 }
 
+.footer{
+  border-top: 1px solid ;
+  margin-top: 40px;
+}
+
+.footer-titulo{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: #909090;
+}
+
+.footer-icones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 30px;
+}
+
+
 @media(max-width:1350px) {
   .tabela-pedido{
     margin: 5%;
@@ -163,8 +185,6 @@
     height: 250px ;
   }
 
-
-
   .nome-usuario{
     font-size: 35px;
     opacity: 1;
@@ -186,7 +206,7 @@
 
 @media (max-width:500px) {
   .usuario{
-    background-size: 300px;
+    background-size: 360px;
   }
 
   .informacoes-usuario{
@@ -208,5 +228,9 @@
 
   .tabela-pedido{
     flex-direction: column;
+  }
+
+  .botao-acompanhar-pedido{
+    margin-bottom: 30px;
   }
 }
