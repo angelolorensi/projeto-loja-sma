@@ -1,4 +1,4 @@
-import { CamisetasService } from './../../service/camisetas/camisetas.service';
+import { CamisetasService } from '../../service/camisetas/camisetas.service';
 import { Component, OnInit } from '@angular/core';
 import { Camiseta } from 'src/app/model/Camiseta';
 

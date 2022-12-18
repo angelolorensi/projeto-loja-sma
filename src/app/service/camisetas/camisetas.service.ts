@@ -40,15 +40,15 @@ export class CamisetasService {
       },
       {
         id: 3,
-        nome: 'Do More',
+        nome: 'Never Stop',
         tamanho: 'G',
         cor: 'Preta',
         preco: 50,
         descricao:
           'Camiseta Insert Coins fabricada 100% em algodao, cor preta , com o logo em caixa alta.',
         favorito: false,
-        urlImagem: '/assets/img/camisetas/camiseta-do-more.svg',
-        urlImagemZoom: '/assets/img/camisetas/camiseta-do-more-close-up.png',
+        urlImagem: '/assets/img/camisetas/camiseta-never-stop.svg',
+        urlImagemZoom: '/assets/img/camisetas/camiseta-never-stop-close-up.png',
         urlImagemBack: '/assets/img/camisetas/camiseta-back-preta.svg',
         filtros: ['G', 'preto'],
       },

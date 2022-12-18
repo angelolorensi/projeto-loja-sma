@@ -1,1 +1,21 @@
-<p>carrinho works!</p>
+<div class="container">
+  <h2 class="titulo-pagina">Carrinho</h2>
+  <div class="favoritos">
+    <ul>
+      <li *ngFor="let camiseta of camisetas">
+        <a>
+          <div class="conteudo-produtos">
+            <mat-card class="mat-card-produto">
+              <img routerLink="/pagina-produto/{{ camiseta.id }}" class="card-img" src="{{ camiseta.urlImagem }}" />
+              <mat-card-content class="mat-card-content">
+                <h2 class="nome-produto">Camiseta {{ camiseta.nome }}</h2>
+                <p class="preco-produto"> {{ camiseta.preco | currency : "R$"}}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <button class="botao" mat-raised-button>Finalizar Compra</button>
+</div>
