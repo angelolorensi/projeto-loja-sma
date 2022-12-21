@@ -1,37 +1,78 @@
 <div class="container">
   <h2 class="titulo-pagina">Cadastrar</h2>
   <div>
-    <form [formGroup]="form">
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" #formDir="ngForm">
+
       <mat-form-field class="form-field">
-        <mat-label>Email</mat-label>
-        <input matControlName="email" required type="email" matInput placeholder="Ex. joao@gmail.com">
-        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-          Por favor insira um endereço de email válido.
-        </mat-error>
-        <mat-error *ngIf="emailFormControl.hasError('required')">
-          Email é <strong>obrigatório</strong>
-        </mat-error>
+        <mat-label for="nome">Nome Completo</mat-label>
+        <input formControlName="nome" required matInput type="text" maxlength="50" minlength="4" placeholder="Ex. Luis Alves de Lima e Silva">
       </mat-form-field>
+      <div class="erro-validacao" *ngIf="nome.invalid && formDir.submitted">
+          <div *ngIf="nome.errors?.['required']">O campo de email deve estar preenchido.</div>
+          <div *ngIf="nome.errors?.['maxlenght']">O nome deve ter no maximo 50 caracteres</div>
+          <div *ngIf="nome.errors?.['minlenght']">O nome deve ter no minimo 4 caracteres</div>
+      </div>
+
       <mat-form-field class="form-field">
-        <mat-label>Senha</mat-label>
-        <input matControlName="senha" required matInput type="password">
+        <mat-label for="email">Email</mat-label>
+        <input formControlName="email" email required type="email" matInput placeholder="Ex. joao@gmail.com">
       </mat-form-field>
+      <div class="erro-validacao" *ngIf="email.invalid && formDir.submitted">
+          <div *ngIf="email.errors?.['required']">O campo de email deve estar preenchido.</div>
+          <div *ngIf="email.errors?.['email']">O email deve ser válido.</div>
+      </div>
+
       <mat-form-field class="form-field">
-        <mat-label>Data de Nascimento</mat-label>
-        <input matControlName="endereco" required matInput type="date">
+        <mat-label for="telefone">Telefone</mat-label>
+        <input formControlName="telefone" type="tel" required matInput placeholder="Ex. 33 3333-3333" minlength="11" pattern="^1\d\d(\d\d)?$|^0800 ?\d{3} ?\d{4}$|^(\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d[ .-]?)?(9|9[ .-])?[2-9]\d{3}[ .-]?\d{4}$">
       </mat-form-field>
+      <div class="erro-validacao" *ngIf="telefone.invalid && formDir.submitted">
+          <div *ngIf="telefone.errors?.['required']">O campo de telefone deve estar preenchido.</div>
+          <div *ngIf="telefone.errors?.['pattern']">O telefone deve ser válido.</div>
+          <div *ngIf="telefone.errors?.['minlenght']">O telefone deve ser válido.</div>
+      </div>
+
       <mat-form-field class="form-field">
-        <mat-label>CPF</mat-label>
-        <input matControlName="cpf" required matInput type="text">
+        <mat-label for="senha">Senha</mat-label>
+        <input formControlName="senha" required matInput type="password" placeholder="Min. 8 caracteres">
       </mat-form-field>
+      <div class="erro-validacao" *ngIf="senha.invalid && formDir.submitted">
+        <div *ngIf="senha.errors?.['required']">A campo de senha deve estar preenchido.</div>
+        <div *ngIf="senha.errors?.['maxlenght']">A senha deve ter entre 8-12 caracteres</div>
+        <div *ngIf="senha.errors?.['minlenght']">A senha deve ter entre 8-12 caracteres</div>
+      </div>
+
       <mat-form-field class="form-field">
-        <mat-label>Cep</mat-label>
-        <input matControlName="cep" required matInput type="text">
+        <mat-label>Confirmar senha</mat-label>
+        <input required matInput type="password">
       </mat-form-field>
+
       <mat-form-field class="form-field">
-        <mat-label>Endereço</mat-label>
-        <input matControlName="endereco" required matInput type="text">
+        <mat-label for="dataNascimento">Data de Nascimento</mat-label>
+        <input formControlName="dataNascimento" required matInput type="date">
       </mat-form-field>
+      <div class="erro-validacao" *ngIf="dataNascimento.invalid && formDir.submitted">A data de nascimento deve estar preenchida.</div>
+
+      <mat-form-field class="form-field">
+        <mat-label for="cpf">CPF</mat-label>
+        <input formControlName="cpf" required matInput type="text" placeholder="XXX-XXX-XXX-XX">
+      </mat-form-field>
+      <div class="erro-validacao" *ngIf="cpf.invalid && formDir.submitted">O campo de cpf deve estar preenchido.</div>
+
+      <mat-form-field class="form-field">
+        <mat-label for="cep">Cep</mat-label>
+        <input formControlName="cep" required matInput type="text" placeholder="XXXXX-XXX">
+      </mat-form-field>
+      <div class="erro-validacao" *ngIf="cep.invalid && formDir.submitted">O campo de cep deve estar preenchido.</div>
+
+      <mat-form-field class="form-field">
+        <mat-label for="endereco">Endereço</mat-label>
+        <input formControlName="endereco" required matInput type="text">
+      </mat-form-field>
+      <div class="erro-validacao" *ngIf="endereco.invalid && formDir.submitted">O campo de endereço deve estar preenchido.</div>
+
+      <button mat-raised-button>Registrar</button>
+
     </form>
   </div>
 </div>

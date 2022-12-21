@@ -23,6 +23,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginaEsqueciSenhaComponent } from './pages/pagina-esqueci-senha/pagina-esqueci-senha.component';
 import { PaginaCadastroComponent } from './pages/pagina-cadastro/pagina-cadastro.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { PaginaCadastroComponent } from './pages/pagina-cadastro/pagina-cadastro
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
+    MatCheckboxModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

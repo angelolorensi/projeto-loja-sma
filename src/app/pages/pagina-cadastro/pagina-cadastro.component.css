@@ -38,3 +38,11 @@ form{
 .campos-secundarios:hover{
   opacity: 1;
 }
+
+button{
+  margin-top: 10px;
+}
+
+.erro-validacao{
+  opacity: .5;
+}
