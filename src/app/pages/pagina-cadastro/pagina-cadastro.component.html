@@ -1,0 +1,37 @@
+<div class="container">
+  <h2 class="titulo-pagina">Cadastrar</h2>
+  <div>
+    <form [formGroup]="form">
+      <mat-form-field class="form-field">
+        <mat-label>Email</mat-label>
+        <input matControlName="email" required type="email" matInput placeholder="Ex. joao@gmail.com">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Por favor insira um endereço de email válido.
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email é <strong>obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Senha</mat-label>
+        <input matControlName="senha" required matInput type="password">
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Data de Nascimento</mat-label>
+        <input matControlName="endereco" required matInput type="date">
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>CPF</mat-label>
+        <input matControlName="cpf" required matInput type="text">
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Cep</mat-label>
+        <input matControlName="cep" required matInput type="text">
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Endereço</mat-label>
+        <input matControlName="endereco" required matInput type="text">
+      </mat-form-field>
+    </form>
+  </div>
+</div>

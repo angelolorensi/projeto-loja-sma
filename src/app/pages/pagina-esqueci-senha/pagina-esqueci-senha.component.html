@@ -1,0 +1,19 @@
+<div class="container">
+  <h2 class="titulo-pagina">Recuperação de senha</h2>
+  <div>
+    <form [formGroup]="form">
+      <p>Insira o seu email e uma nova senha será enviada.</p>
+      <mat-form-field class="form-field">
+        <mat-label>Email</mat-label>
+        <input matControlName="email" type="email" matInput placeholder="Ex. joao@gmail.com">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Por favor insira um endereço de email válido.
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email é <strong>obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button>Enviar nova senha</button>
+    </form>
+  </div>
+</div>

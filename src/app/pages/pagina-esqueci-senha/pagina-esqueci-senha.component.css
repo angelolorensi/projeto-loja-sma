@@ -1,0 +1,40 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-pagina{
+  font-size:40px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(218, 218, 218);
+  padding: 50px;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.form-field{
+  width: 50vh;
+  background-color: gainsboro;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  margin-bottom: 15px;
+}
+
+.campos-secundarios{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  opacity: 0.5;
+  margin-top: 10px;
+}
+
+.campos-secundarios:hover{
+  opacity: 1;
+}

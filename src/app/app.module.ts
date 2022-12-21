@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +18,11 @@ import { PaginaProdutoComponent } from './pages/pagina-produto/pagina-produto.co
 import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 import { FavoritosComponent } from './pages/favoritos/favoritos.component';
 import { ContaUsuarioComponent } from './pages/conta-usuario/conta-usuario.component';
+import { PaginaLoginComponent } from './pages/pagina-login/pagina-login.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaginaEsqueciSenhaComponent } from './pages/pagina-esqueci-senha/pagina-esqueci-senha.component';
+import { PaginaCadastroComponent } from './pages/pagina-cadastro/pagina-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +33,9 @@ import { ContaUsuarioComponent } from './pages/conta-usuario/conta-usuario.compo
     CarrinhoComponent,
     FavoritosComponent,
     ContaUsuarioComponent,
+    PaginaLoginComponent,
+    PaginaEsqueciSenhaComponent,
+    PaginaCadastroComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +48,9 @@ import { ContaUsuarioComponent } from './pages/conta-usuario/conta-usuario.compo
     MatMenuModule,
     MatCardModule,
     MatSidenavModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
