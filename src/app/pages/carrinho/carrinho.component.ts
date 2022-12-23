@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Camiseta } from 'src/app/model/Camiseta';
-import { CamisetasService } from 'src/app/service/camisetas/camisetas.service';
+import { Produto } from 'src/app/model/Produto';
+import { ProdutosService } from 'src/app/service/produtos/produtos.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -8,11 +8,11 @@ import { CamisetasService } from 'src/app/service/camisetas/camisetas.service';
   styleUrls: ['./carrinho.component.css'],
 })
 export class CarrinhoComponent implements OnInit {
-  camisetas: Camiseta[] = [];
+  produtos: Produto[] = [];
 
-  constructor(private camisetaService: CamisetasService) {}
+  constructor(private produtosService: ProdutosService) {}
 
   ngOnInit(): void {
-    this.camisetas = this.camisetaService.buscarTodos();
+    this.produtos = this.produtosService.buscarTodos();
   }
 }

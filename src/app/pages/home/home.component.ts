@@ -1,6 +1,6 @@
-import { CamisetasService } from '../../service/camisetas/camisetas.service';
+import { ProdutosService } from '../../service/produtos/produtos.service';
 import { Component, OnInit } from '@angular/core';
-import { Camiseta } from 'src/app/model/Camiseta';
+import { Produto } from 'src/app/model/Produto';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +8,11 @@ import { Camiseta } from 'src/app/model/Camiseta';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  camisetas: Camiseta[] = [];
+  produtos: Produto[] = [];
 
-  constructor(private camisetaService: CamisetasService) {}
+  constructor(private ProdutoService: ProdutosService) {}
 
   ngOnInit(): void {
-    this.camisetas = this.camisetaService.buscarMaisVendidos();
+    this.produtos = this.ProdutoService.buscarMaisVendidos();
   }
 }

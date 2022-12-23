@@ -1,8 +1,8 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { CamisetasService } from 'src/app/service/camisetas/camisetas.service';
-import { Camiseta } from 'src/app/model/Camiseta';
+import { ProdutosService } from 'src/app/service/produtos/produtos.service';
+import { Produto } from 'src/app/model/Produto';
 
 @Component({
   selector: 'app-lista-produtos',
@@ -13,15 +13,15 @@ export class ListaProdutosComponent implements OnInit {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
-  camisetas: Camiseta[] = [];
+  produtos: Produto[] = [];
 
   constructor(
     private observer: BreakpointObserver,
-    private camisetasService: CamisetasService
+    private ProdutosService: ProdutosService
   ) {}
 
   ngOnInit(): void {
-    this.camisetas = this.camisetasService.buscarTodos();
+    this.produtos = this.ProdutosService.buscarTodos();
   }
 
   ngAfterViewInit() {

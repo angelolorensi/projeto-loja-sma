@@ -1,5 +1,6 @@
-export class Camiseta{
+export class Produto{
   id!: number;
+  categoria?: string;
   nome!: string;
   tamanho!: string;
   preco!: number;

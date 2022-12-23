@@ -32,21 +32,21 @@
     <div>
       <img src="\assets\img\icones-home\dollar-icone.png">
       <div class="conteudo-primeiro-titulo">Bons Preços</div>
-      <div class="conteudo-primeiro-subtitulo">Camisetas a <br> partir de R$50,00.</div>
+      <div class="conteudo-primeiro-subtitulo">Produtos a <br> partir de R$50,00.</div>
     </div>
   </div>
 
   <h2 class="mais-vendidos">Mais Vendidos:</h2>
 
   <ul>
-    <li *ngFor="let camiseta of camisetas">
-      <a routerLink="/pagina-produto/{{camiseta.id}}">
+    <li *ngFor="let produto of produtos">
+      <a routerLink="/pagina-produto/{{produto.id}}">
         <div class="conteudo-produtos">
           <mat-card class="mat-card-produto" >
-            <img class="card-img"src="{{camiseta.urlImagem}}"/>
+            <img class="card-img"src="{{produto.urlImagem}}"/>
             <mat-card-content class="mat-card-content">
-              <h2 class="nome-produto">Camiseta {{camiseta.nome}}</h2>
-              <p class="preco-produto">{{camiseta.preco | currency:'R$'}}</p>
+              <h2 class="nome-produto">{{produto.categoria}} {{produto.nome}}</h2>
+              <p class="preco-produto">{{produto.preco | currency:'R$'}}</p>
             </mat-card-content>
           </mat-card>
         </div>

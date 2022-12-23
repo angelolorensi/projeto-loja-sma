@@ -2,14 +2,14 @@
   <h2 class="titulo-pagina">Favoritos</h2>
   <div class="favoritos">
     <ul>
-      <li *ngFor="let camiseta of camisetas">
+      <li *ngFor="let produto of produtos">
         <a>
           <div class="conteudo-produtos">
             <mat-card class="mat-card-produto">
-              <img routerLink="/pagina-produto/{{ camiseta.id }}" class="card-img" src="{{ camiseta.urlImagem }}" />
+              <img routerLink="/pagina-produto/{{ produto.id }}" class="card-img" src="{{ produto.urlImagem }}" />
               <mat-card-content class="mat-card-content">
-                <h2 class="nome-produto">Camiseta {{ camiseta.nome }}</h2>
-                <p class="preco-produto"> {{ camiseta.preco | currency : "R$"}}</p>
+                <h2 class="nome-produto">{{produto.categoria}}  {{ produto.nome }}</h2>
+                <p class="preco-produto"> {{ produto.preco | currency : "R$"}}</p>
                 <button mat-raised-button>Adicionar ao Carrinho</button>
               </mat-card-content>
             </mat-card>

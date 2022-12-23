@@ -1,7 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { CamisetasService } from 'src/app/service/camisetas/camisetas.service';
+import { ProdutosService } from 'src/app/service/produtos/produtos.service';
 import { Component, OnInit } from '@angular/core';
-import { Camiseta } from '../../model/Camiseta';
+import { Produto } from '../../model/Produto';
 
 @Component({
   selector: 'app-pagina-produto',
@@ -9,15 +9,15 @@ import { Camiseta } from '../../model/Camiseta';
   styleUrls: ['./pagina-produto.component.css'],
 })
 export class PaginaProdutoComponent implements OnInit {
-  camiseta!: Camiseta;
+  produto!: Produto;
 
   constructor(
-    private camisetaService: CamisetasService,
+    private ProdutosService: ProdutosService,
     private activatedRoute: ActivatedRoute
   ) {
     activatedRoute.params.subscribe((params) => {
       if (params['id']) {
-        this.camiseta = camisetaService.buscarCamisetaPorId(params['id']);
+        this.produto = ProdutosService.buscarProdutoPorId(params['id']);
       }
     });
   }
