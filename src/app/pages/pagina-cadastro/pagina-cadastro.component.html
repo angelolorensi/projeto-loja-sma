@@ -55,15 +55,21 @@
 
       <mat-form-field class="form-field">
         <mat-label for="cpf">CPF</mat-label>
-        <input formControlName="cpf" required matInput type="text" placeholder="XXX-XXX-XXX-XX">
+        <input formControlName="cpf" required matInput type="text" minlength="11" placeholder="XXX.XXX.XXX-XX">
       </mat-form-field>
-      <div class="erro-validacao" *ngIf="cpf.invalid && formDir.submitted">O campo de cpf deve estar preenchido.</div>
+      <div class="erro-validacao" *ngIf="cpf.invalid && formDir.submitted">
+          <div *ngIf="cpf.errors?.['required']">O campo de cpf deve estar preenchido.</div>
+          <div *ngIf="cpf.errors?.['minlenght']">O cpf deve ser válido.</div>
+      </div>
 
       <mat-form-field class="form-field">
         <mat-label for="cep">Cep</mat-label>
-        <input formControlName="cep" required matInput type="text" placeholder="XXXXX-XXX">
+        <input formControlName="cep" required matInput type="text" minlength="8" placeholder="XXXXX-XXX">
       </mat-form-field>
-      <div class="erro-validacao" *ngIf="cep.invalid && formDir.submitted">O campo de cep deve estar preenchido.</div>
+      <div class="erro-validacao" *ngIf="cep.invalid && formDir.submitted">
+          <div *ngIf="cep.errors?.['required']">O campo de cep deve estar preenchido.</div>
+          <div *ngIf="cep.errors?.['minlenght']">O cep deve ser válido.</div>
+      </div>
 
       <mat-form-field class="form-field">
         <mat-label for="endereco">Endereço</mat-label>
