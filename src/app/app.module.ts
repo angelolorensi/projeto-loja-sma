@@ -25,6 +25,7 @@ import { PaginaEsqueciSenhaComponent } from './pages/pagina-esqueci-senha/pagina
 import { PaginaCadastroComponent } from './pages/pagina-cadastro/pagina-cadastro.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxMaskModule} from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot({ dropSpecialCharacters: false })
   ],
   providers: [],
   bootstrap: [AppComponent],

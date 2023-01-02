@@ -24,7 +24,7 @@
 
       <mat-form-field class="form-field">
         <mat-label for="telefone">Telefone</mat-label>
-        <input formControlName="telefone" type="tel" required matInput placeholder="Ex. 33 3333-3333" minlength="11" pattern="^1\d\d(\d\d)?$|^0800 ?\d{3} ?\d{4}$|^(\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d[ .-]?)?(9|9[ .-])?[2-9]\d{3}[ .-]?\d{4}$">
+        <input formControlName="telefone" mask="(00)00000-0000" type="tel" required matInput placeholder="Ex. (99) 99999-9999" minlength="11" pattern="^1\d\d(\d\d)?$|^0800 ?\d{3} ?\d{4}$|^(\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d[ .-]?)?(9|9[ .-])?[2-9]\d{3}[ .-]?\d{4}$">
       </mat-form-field>
       <div class="erro-validacao" *ngIf="telefone.invalid && formDir.submitted">
           <div *ngIf="telefone.errors?.['required']">O campo de telefone deve estar preenchido.</div>
@@ -59,7 +59,7 @@
 
       <mat-form-field class="form-field">
         <mat-label for="cpf">CPF</mat-label>
-        <input formControlName="cpf" required matInput type="text" minlength="11" placeholder="XXX.XXX.XXX-XX">
+        <input formControlName="cpf" mask="000.000.000-00" required matInput type="text" minlength="11" placeholder="XXX.XXX.XXX-XX">
       </mat-form-field>
       <div class="erro-validacao" *ngIf="cpf.invalid && formDir.submitted">
           <div *ngIf="cpf.errors?.['required']">O campo de cpf deve estar preenchido.</div>
@@ -68,7 +68,7 @@
 
       <mat-form-field class="form-field">
         <mat-label for="cep">Cep</mat-label>
-        <input formControlName="cep" required matInput type="text" minlength="8" placeholder="XXXXX-XXX">
+        <input formControlName="cep" mask="00000-000" required matInput type="text" minlength="8" placeholder="XXXXX-XXX">
       </mat-form-field>
       <div class="erro-validacao" *ngIf="cep.invalid && formDir.submitted">
           <div *ngIf="cep.errors?.['required']">O campo de cep deve estar preenchido.</div>
