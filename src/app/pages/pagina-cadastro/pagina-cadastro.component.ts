@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { UsuariosService } from 'src/app/service/usuarios/usuarios.service';
 
 @Component({
@@ -14,16 +14,20 @@ export class PaginaCadastroComponent implements OnInit {
     private formBuilder: FormBuilder,
     private usuarioService: UsuariosService
   ) {
-    this.form = this.formBuilder.group({
-      nome: [null, Validators.required],
-      email: [null, Validators.required],
-      senha: [null, Validators.required],
-      telefone: [null, Validators.required],
-      dataNascimento: [null, Validators.required],
-      cpf: [null, Validators.required],
-      cep: [null, Validators.required],
-      endereco: [null, Validators.required],
-    });
+    this.form = this.formBuilder.group(
+      {
+        nome: [null, Validators.required],
+        email: [null, Validators.required],
+        senha: [null, Validators.required],
+        confirmarSenha: [null, Validators.required],
+        telefone: [null, Validators.required],
+        dataNascimento: [null, Validators.required],
+        cpf: [null, Validators.required],
+        cep: [null, Validators.required],
+        endereco: [null, Validators.required],
+      },
+      { validators: [CustomValidators.match('senha', 'confirmarSenha')] }
+    );
   }
 
   ngOnInit(): void {}
@@ -32,7 +36,9 @@ export class PaginaCadastroComponent implements OnInit {
     if (!this.form.valid) {
       return;
     } else {
-      this.usuarioService.salvarUsuario(this.form.value).subscribe((res) => console.log(res));
+      this.usuarioService
+        .salvarUsuario(this.form.value)
+        .subscribe((res) => console.log(res));
     }
   }
 
@@ -51,6 +57,9 @@ export class PaginaCadastroComponent implements OnInit {
   get senha() {
     return this.form.get('senha')!;
   }
+  get confirmarSenha() {
+    return this.form.get('confirmarSenha')!;
+  }
   get cep() {
     return this.form.get('cep')!;
   }
@@ -59,5 +68,25 @@ export class PaginaCadastroComponent implements OnInit {
   }
   get dataNascimento() {
     return this.form.get('dataNascimento')!;
+  }
+}
+
+export default class CustomValidators {
+  static match(controlName: string, matchControlName: string): ValidatorFn {
+    return (controls: AbstractControl) => {
+      const control = controls.get(controlName);
+      const matchControl = controls.get(matchControlName);
+
+      if (!matchControl?.errors && control?.value !== matchControl?.value) {
+        matchControl?.setErrors({
+          matching: {
+            actualValue: matchControl?.value,
+            requiredValue: control?.value,
+          },
+        });
+        return { matching: true };
+      }
+      return null;
+    };
   }
 }

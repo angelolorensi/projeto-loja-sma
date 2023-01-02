@@ -44,7 +44,11 @@
 
       <mat-form-field class="form-field">
         <mat-label>Confirmar senha</mat-label>
-        <input required matInput type="password">
+        <input formControlName="confirmarSenha" required matInput type="password" pattern="{{senha.value}}">
+        <div class="erro-validacao" *ngIf=" confirmarSenha.invalid && (confirmarSenha.touched && formDir.submitted)">
+          <div *ngIf="confirmarSenha.errors?.['required']">A campo de confimar senha deve estar preenchido.</div>
+          <div *ngIf="confirmarSenha.errors?.['pattern']">As senhas devem estar iguais.</div>
+        </div>
       </mat-form-field>
 
       <mat-form-field class="form-field">
