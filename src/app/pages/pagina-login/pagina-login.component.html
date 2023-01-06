@@ -1,20 +1,20 @@
 <div class="container">
   <h2 class="titulo-pagina">Login</h2>
   <div>
-    <form [formGroup]="form">
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" #formDir="ngForm">
       <mat-form-field class="form-field">
         <mat-label>Email</mat-label>
-        <input matControlName="email" type="email" matInput placeholder="Ex. joao@gmail.com">
-        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-          Por favor insira um endereço de email válido.
-        </mat-error>
-        <mat-error *ngIf="emailFormControl.hasError('required')">
-          Email é <strong>obrigatório</strong>
-        </mat-error>
+        <input formControlName="email" type="email" matInput placeholder="Seu email aqui">
+        <div class="erro-validacao" *ngIf="email.invalid && formDir.submitted">
+          <div *ngIf="email.errors?.['required']">O campo de email deve estar preenchido.</div>
+        </div>
       </mat-form-field>
       <mat-form-field class="form-field">
         <mat-label>Senha</mat-label>
-        <input matControlName="senha" matInput type="password">
+        <input formControlName="senha" matInput type="password">
+        <div class="erro-validacao" *ngIf="senha.invalid && formDir.submitted">
+          <div *ngIf="senha.errors?.['required']">O campo de senha deve estar preenchido.</div>
+        </div>
       </mat-form-field>
       <button mat-raised-button>Entrar</button>
       <a routerLink="/esqueci-senha" class="campos-secundarios">Esqueci minha senha</a>

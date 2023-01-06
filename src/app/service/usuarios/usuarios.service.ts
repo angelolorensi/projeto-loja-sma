@@ -11,6 +11,10 @@ export class UsuariosService {
 
   constructor(private httpClient: HttpClient) { }
 
+  buscarUsuarioPorId() {
+    
+  }
+
   salvarUsuario(usuario:Usuario) {
     return this.httpClient.post<Usuario>(this.API + 'usuario/', usuario)
   }
